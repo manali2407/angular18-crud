@@ -1,0 +1,45 @@
+<h1 class="text-center">Data Binding</h1>
+<div class="row">
+    
+    <div class="col-4">
+       interpolation<br>
+        {{empName}}<br>
+        <input type="text" value="{{empName}}"><br>
+        <input type="{{inputCheck}}"><br>
+        <input type="{{inputRadio}}"><br>
+    </div>
+    <div class="col-4">
+        <b>Property Binding</b>
+        <div [class]="myClass">This is property binding</div>
+        <input type="text" [value]="empAddress">
+        <input [type]="inputCheck" [value]="empAddress">
+    </div>
+    <div class="col-4">
+        <b>Event Binding</b><br>
+        <button class="btn btn-success" (click)="showMessage('Welcome to angular 18')"> Click to get Message</button>
+    </div>
+    
+</div>
+<hr>
+<hr>
+<div class="row">
+    
+    <div class="col-12">
+        <b>Two Way Data binding</b>
+        <br>
+        <button class="btn btn-success" (click)="changeEmpName()" > Change Emp Name</button><br>
+        <input type="text" [(ngModel)]="empName"> - {{empName}}
+    </div>
+  
+    </div>
+
+    <hr>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <b>Signals</b><br>
+        <button class="btn btn-success" (click)="changeEmpName()" > Change Emp Name</button><br>
+        <b> {{firstName()}} </b>
+    </div>
+  
+    </div>
