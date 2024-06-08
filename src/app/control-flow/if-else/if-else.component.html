@@ -1,42 +1,69 @@
-<p>structural-directives</p>
+<p>if-else works!</p>
 
-<div class="row mb-5">
-    <div class="col-12">
-        <button class="btn btn-primary" (click)="navigateToAtribute()"> Go to Structural Directive </button>
-    </div>
-</div>
 
 <div class="row">
     <div class="col-3 text-center">
-        <div *ngIf="isDiv1Visible" class="card bg-secondary mb-3">
-            <h1 class="text-center" >Div 1</h1>
-        </div>
+ @if(isDiv1Visible){
+    <div class="card bg-secondary mb-3">
+        <h1 class="text-center" >Div 1</h1>
+    </div>
+ }
+
+       
         <button class="btn btn-primary" (click)="showDiv1()" >Show</button>
         <span class="mr-5"> || </span>
         <button class="btn btn-danger" (click)="hideDiv1()" >Hide</button>
     </div>
     <div class="col-3 text-center">
-        <div class="card" *ngIf="isDiv2Visible">
+    @if(isDiv2Visible){
+        <div class="card bg-success">
             <h1 class="text-center" >Div 2</h1>
         </div>
+    }@else {
+        <div class="card bg-warning">
+            <h1 class="text-center" >Div 2</h1>
+        </div>
+    }
+
         <button class="btn btn-primary"  (click)="toggleDiv()" >Toggle</button>
     </div>
     <div class="col-3 text-center">
-        <div class="card" *ngIf="num1 == num2">
-            <h1 class="text-center" >Div 3</h1>
-        </div>
+        @if(num1 == num2){
+            <div class="card">
+                <h1 class="text-center" >Div 3</h1>
+            </div>
+        }
+
+       
         <input type="text" placeholder="Num 1" [(ngModel)]="num1" >
         <input type="text" placeholder="Num 2" [(ngModel)]="num2">
     </div>
     <div class="col-3 text-center">
-        <div class="card" *ngIf="isActive">
-            <h1 class="text-center" >Div 4</h1>
+        <div class="card">
+   @if(selectStatus == 'Active'){
+    <p class="text-center" >Active</p>
+   }@else if (selectStatus == 'Deactive'){
+    <p class="text-center" >Deactive</p>
+   }@else if(selectStatus == 'Pending'){
+    <p class="text-center" >Pending</p>
+   } @else {
+    <p class="text-center" >Please Select Status</p>
+   }
+
+           
+            
+            
         </div>
-        <input type="checkbox" [(ngModel)]="isActive"> 
+        <select [(ngModel)]="selectStatus" > 
+            <option value=""> Select Status</option>
+            <option value="Active"> Active</option>
+            <option value="Deactive"> Deactive</option>
+            <option value="Pending"> Pending</option>
+        </select>
      
     </div>
     <hr>
-    <div class="col-3 text-center">
+    <!-- <div class="col-3 text-center">
         <div class="card" *ngIf="selectedValue == '1' ">
             <h1 class="text-center" >Div 4</h1>
         </div>
@@ -46,13 +73,13 @@
             <option value="2"> Option 2</option>
             <option value="3"> Option 3</option>
         </select>
-    </div>
+    </div> -->
 </div>
 
 
 <hr/>
 <hr/>
-
+<!-- 
 <div class="row">
     <div class="col-3">
         <ul >
@@ -101,4 +128,4 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->

@@ -1,0 +1,97 @@
+<p>atribute-directives </p>
+
+<div class="row mb-5">
+    <div class="col-12">
+        <button class="btn btn-primary" [routerLink]="[ '/structural']"> Go to Structural Directive </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-center">
+        <div class="card  mb-3" [ngClass]="div1BgColor">
+            <h1 class="text-center">Div 1</h1>
+        </div>
+        <button class="btn btn-primary" (click)="addBlue()">Add Blue</button>
+        <span class="mr-5"> || </span>
+        <button class="btn btn-danger" (click)="addRed()">Add Red</button>
+    </div>
+    <div class="col-3 text-center">
+        <div class="card" [ngClass]="isDiv2Active == true ? 'bg-success': 'bg-warning' ">
+            <h1 class="text-center">Div 2</h1>
+        </div>
+        <button class="btn btn-success" (click)="div2Toggle()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <div class="card" [ngClass]="num1 == num2 ? 'bg-success text-white': 'bg-danger text-warning' ">
+            <h1 class="text-center">Div 3</h1>
+        </div>
+        <input type="text" placeholder="Num 1" [(ngModel)]="num1">
+        <input type="text" placeholder="Num 2" [(ngModel)]="num2">
+    </div>
+    <div class="col-3 text-center">
+        <div class="card" [ngClass]="isChecked ? 'bg-primary text-white': '' ">
+            <h1 class="text-center">Div 4</h1>
+        </div>
+        <input type="checkbox" [(ngModel)]="isChecked">
+
+    </div>
+    <hr>
+  
+</div>
+
+
+<div class="row">
+ 
+<div class="col-4">
+    <div [ngStyle]="customStyle" >
+        This is a custom Style
+    </div>
+</div>
+
+    <div class="col-12">
+        <table class="table tbale-border">
+            <thead>
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>IsActive</th>
+                    <th>Total Marks</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of studentList">
+                    <td>{{stud.studId }} </td>
+                    <td>{{stud.name }} </td>
+                    <td>{{stud.city }} </td>
+
+                    <td>{{stud.gender }} </td>
+                    
+
+
+
+                    <td 
+                     [ngStyle]="{'background-color': stud.isActive ? 'green' : 'yellow' }"
+                    >({{stud.isActive }}) --
+
+                        <span> {{stud.isActive ? 'Active' : 'Deactive' }} </span>
+                    </td>
+
+                    <td>
+                        {{stud.totalMarks}}
+                        <div class="progress">
+                            <div class="progress-bar" 
+                            [ngStyle]="{'width':stud.totalMarks + '%' }"
+                            > 
+                            {{stud.totalMarks}}
+                        </div>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-structural-directives',
@@ -33,6 +34,11 @@ studentList:any [] = [
   {studId:555, name:'eee', city:'EEE', isActive:false},
 ]
 
+constructor(
+  private router : Router
+){
+
+}
 
 showDiv1(){
   this.isDiv1Visible = true;
@@ -50,6 +56,10 @@ toggleDiv(){
   //   this.isDiv2Visible = true
   // }
 
+}
+
+navigateToAtribute(){
+  this.router.navigateByUrl('atribute')
 }
 
 
