@@ -7,6 +7,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { IfElseComponent } from './control-flow/if-else/if-else.component';
 import { ForComponent } from './control-flow/for/for.component';
 import { SwitchComponent } from './control-flow/switch/switch.component';
+import { PipeComponent } from './pipes/pipe/pipe.component';
 
 export const routes: Routes = [
     {path:'add-emp', component:AddEmployeeComponent},
@@ -17,4 +18,5 @@ export const routes: Routes = [
     {path:'ifElse', component:IfElseComponent},
     {path:'for', component:ForComponent},
     {path:'switch', component:SwitchComponent},
+    {path:'pipe', component:PipeComponent},
 ];

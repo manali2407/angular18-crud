@@ -1,0 +1,60 @@
+<p>pipe </p>
+
+<p>Default pipes & Custom Pipes</p>
+
+<div class="row">
+    <div class="col-3 ">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{courseName}} </p>
+            <p>after Pipe - {{courseName | uppercase }} </p>
+        </div>
+
+    </div>
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{courseName}} </p>
+            <p>after Pipe - {{courseName | lowercase }} </p>
+        </div>
+    </div>
+
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{courseName}} </p>
+            <p>after Pipe - {{courseName | titlecase}} </p>
+        </div>
+    </div>
+    <div class="col-3 mb-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{currentDate}} </p>
+            <p>after Pipe - {{currentDate | date}} |
+                 {{currentDate | date: 'dd-mm-yyyy' }} |
+                 {{currentDate | date: 'dd-MMM-yyyy' }}</p>
+        </div>
+    </div>
+    <br>
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{studentObj}} </p>
+            <p>after Pipe - {{studentObj | json}} </p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe -  {{currentTime}} </p>
+            <p>after Pipe -{{currentTime|async | date:'hh:mm:ss'}} </p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - {{studentObj.state}} </p>
+            <p>after Pipe - {{studentObj.state | na}} </p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class=" card text-bg-secondary p-3">
+            <p>Original Pipe - </p>
+            <p>after Pipe - </p>
+        </div>
+    </div>
+
+</div>
